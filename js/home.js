@@ -9,7 +9,7 @@ const cekKataKasar = async (sumber, KataKasar)=>{
     let res;
     let hasilKataKasar = [];
     for (let i = 0; i < len; i++) {
-        if(res = sumber.match(new RegExp(KataKasar[i]),'i')){
+        if(res = sumber.match(new RegExp(KataKasar[i],'i'))){
             hasilKataKasar.push(res[0]);
         }
     }
