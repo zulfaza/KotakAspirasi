@@ -18,6 +18,10 @@ const cekKataKasar = async (sumber, KataKasar)=>{
 }
 Array.from(inputs).forEach(function(input) {
     input.addEventListener('keyup', (e)=>{
+        if(e.keyCode==13 && input.localName != 'textarea'){
+            proses();
+            return;
+        }
         if (input.value !== '') {
             document.getElementById('invalid-'+input.name).style.display = "none";
         }else{

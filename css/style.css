@@ -25,7 +25,7 @@ body {
     font-weight: 400;
     color: #212529;
     text-align: left;
-    background-color: #74e3ff;
+    background: #74e3ff url('../img/2.png') bottom right no-repeat;
     overflow-x: hidden;
 }
 .font-weight-bold{
@@ -177,14 +177,27 @@ label {
 
 #result{
     overflow-y: auto;
-    height: 80vh;
+    max-height: 80vh;
 }
 
-#res-wrapper.card{
+#res-wrapper.card, #tanpaScript.card{
     position: fixed;
     transition: .5s;
     z-index: -1;
     top: 50px;
+}
+#tanpaScript{
+    margin: 5% auto;
+    left: 0;
+    right: 0;
+    width: fit-content;
+    max-width: 80vw;
+}
+#tanpaScript .overlay{
+    opacity: 1 !important;
+}
+noscript{
+    z-index: 99;
 }
 .overlay{
     position: fixed;
@@ -260,6 +273,13 @@ label {
 .sosmed a:nth-of-type(4):before {
     content:'\f17d';
 }
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    min-width: 100%;
+}
 @keyframes turunn {
     0%   {transform: scale(0);}
     70% {transform: scale(1.1);}
@@ -270,11 +290,14 @@ label {
 
 
 @media (min-width: 768px) { 
-    .card {
+    .card,.row {
         min-width: 70%;
     }
     h1::before{
         display: block;
+    }
+    .row{
+        flex-direction: row;
     }
  }
 
@@ -283,7 +306,7 @@ label {
     #res-wrapper .card-body {
         padding: 1rem 3rem 2rem 3rem;
     }
-    .card {
+    .card,.row {
         min-width: 50%;
     }
  }
