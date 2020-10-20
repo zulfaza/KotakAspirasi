@@ -6,7 +6,7 @@
 
 # About Kotak Aspirasi
 
-Ya ini cuma web buat menuhin UTS, jadi jangan berharap banyak ya. Sistemnya itu dia minta km buat milih prodi dulu, abis masukin nama, email, dan komentar. Nah di email itu nanti bakalan dipisah antara username dan domain dengan cara "<"username">" @ "<"domain">". lalu untuk komentarnya dihitung ada berapa kata di dalam komentarnya dan dilihat juga ada kata-kata kasarnya atau tidak, jika mengandung kata kasar nanti akan muncul pesan khusus.
+Ya ini cuma web buat menuhin UTS, jadi jangan berharap banyak ya. Sistemnya itu dia minta km buat milih prodi dulu, abis masukin nama, email, dan komentar. Nah di email itu nanti bakalan dipisah antara username dan domain dengan cara &lt;username&gt; @&lt;domain&gt;. lalu untuk komentarnya dihitung ada berapa kata di dalam komentarnya dan dilihat juga ada kata-kata kasarnya atau tidak, jika mengandung kata kasar nanti akan muncul pesan khusus.
 
 ------
 
