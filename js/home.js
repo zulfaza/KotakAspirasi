@@ -51,7 +51,7 @@ const proses = async ()=>{
         let email = document.getElementById('email').value.split('@');
         let username = email[0];
         let domain = email[1];
-        const arrKataKasar = ['babi','anjing', 'goblok','berengsek','bajingan','asu','tai','idiot'];
+        const arrKataKasar = ['babi','anjing', 'goblok','berengsek','bajingan','asu','tai','idiot','kontol', 'memek','ngentot','pepek','pantek','monyet', 'balmond','fuck','shit','asshole','penis','pussy','cock','dick'];
         let hasilKataKasar = await cekKataKasar(komen,arrKataKasar);
         let arrKomen = komen.split(/\s+/);
         arrKomen.forEach((val)=>{

@@ -163,6 +163,10 @@ label {
     box-shadow: 0px 0px 11px 3px rgba(0,0,0,0.11);
 }
 
+#res-wrapper{
+    opacity: 0;
+}
+
 #res-wrapper.card{
     position: fixed;
     transition: .5s;
@@ -189,6 +193,7 @@ label {
 }
 .form{
     animation: turunn 0.5s ease-out;
+    z-index: 1;
 }
 .namaSaya {
     position: relative;
@@ -196,6 +201,13 @@ label {
     border-radius: 17px;
     padding: 0px 2rem;
     animation: turunn 0.5s ease-out;
+}
+#kataKasar-wrapper{
+    font-weight: bold;
+    display: none;
+}
+#kata-kasar{
+    color: var(--red);
 }
 @keyframes turunn {
     0%   {transform: scale(0);}

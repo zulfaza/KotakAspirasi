@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kotak Aspirasi</title>
     <meta name="description" content="Web ini ditujukan untuk memenuhi UTS mata kuliah pemrograman web">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- CSS -->
@@ -15,7 +17,7 @@
         <h1 class="text-center font-weight-bold text-white">Kotak Aspirasi</h1>
     </div>
     <div class="container">
-        <div class="card shadow form" style="z-index: 1;">
+        <div class="card shadow form">
             <div class="card-header">
                 <h4>Ayo berkomentar</h4>
             </div>
@@ -59,7 +61,7 @@
         <div class="namaSaya shadow">
             <h4>Ujian Tengah Semester <br> Nama : Zul Faza Makarima <br>NIM : 19/442493/PA/19242</h4>
         </div>
-        <div id="res-wrapper" class="card" style="opacity: 0;">
+        <div id="res-wrapper" class="card">
             <div class="overlay"></div>
             <div class="card-header">
                 <h2>Result : </h2>
@@ -69,8 +71,8 @@
                 <p>Alamat email yang anda isikan <span id="res-username"></span> (at) <span id="res-domain"></span> <br>Dengan pesan : </p>
                 <p id="res-komen"></p>
                 <p>Jumlah kata dalam komentar anda sebanyak : <span id="text-length"></span> kata</p>
-                <div id="kataKasar-wrapper" style="display: none;">
-                    <p>maaf, tidak boleh pakai kata : <span id="kata-kasar"></span> , harap diganti/dihapus</p>
+                <div id="kataKasar-wrapper">
+                    <p>maaf, tidak boleh pakai kata : <span id="kata-kasar"></span>, harap diganti/dihapus</p>
                 </div>
                 <button class="btn btn-red" onclick="tutup()">Close</button>
             </div>
