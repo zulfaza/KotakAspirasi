@@ -10,6 +10,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.min.css">
 </head>
@@ -46,15 +47,15 @@
                     </div>
                     <div class="form-group">
                         <label for="">E-mail</label>
-                        <input class="form-input" type="email" id="email" placeholder="email" name="email">
+                        <input class="form-input" type="email" id="email" placeholder="E-mail" name="email">
                         <div class="invalid-feedback" id="invalid-email"></div>
                     </div>
                     <div class="form-group">
                         <label for="">Comments</label>
-                        <textarea class="form-input" id="komen" cols="30" rows="10" name="komen"></textarea>
+                        <textarea class="form-input" id="komen" cols="30" rows="10" name="komen" placeholder="Komentarmu"></textarea>
                         <div class="invalid-feedback" id="invalid-komen"></div>
                     </div>
-                    <input class="btn btn-primary" type="button" onclick="reset()" value="Reset">
+                    <input class="btn btn-primary" type="button" onclick="ulang()" value="Reset">
                     <button class="btn btn-primary" type="button" onclick="proses()">Process</button>
                 </form>
             </div>
@@ -62,10 +63,16 @@
         <div class="namaSaya shadow">
             <h4>Ujian Tengah Semester <br> Nama : Zul Faza Makarima <br>NIM : 19/442493/PA/19242</h4>
         </div>
+        <div class="sosmed">
+            <a href="https://www.linkedin.com/in/zul-faza-makarima-5123a5195/" target="_blank"></a>
+            <a href="https://www.linkedin.com/in/zul-faza-makarima-5123a5195/" target="_blank"></a>
+            <a href="https://github.com/zulfaza" target="_blank"></a>
+            <a href="https://dribbble.com/zulfaza" target="_blank"></a>
+          </div>
         <div id="res-wrapper" class="card">
-            <div class="overlay"></div>
+            <div class="overlay" onclick="tutup()" ></div>
             <div class="card-header">
-                <h2>Result : </h2>
+                <h2 class="d-flex justify-content-between">Result : <button class="btn btn-white" onclick="tutup()"><i class="fas fa-times"></i></button> </h2>
             </div>
             <div id="result" class="card-body">
                 <p>Hai <span id="res-name"></span> dari <span id="res-major"></span></p>
@@ -75,7 +82,6 @@
                 <div id="kataKasar-wrapper">
                     <p>maaf, tidak boleh pakai kata : <span id="kata-kasar"></span>, harap diganti/dihapus</p>
                 </div>
-                <button class="btn btn-red" onclick="tutup()">Close</button>
             </div>
         </div>
     </div>

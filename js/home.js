@@ -1,5 +1,5 @@
 const emailValidate = (email)=>{
-    const pattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const pattern =  /(.+)@(.+){2,}\.(.+){2,}/;
     return pattern.test(email);
 }
 let inputs = document.getElementsByClassName('form-input');
@@ -26,7 +26,7 @@ Array.from(inputs).forEach(function(input) {
         }
     });
     input.addEventListener('change', (e)=>{
-        if (input.type === 'email' && !emailValidate(input.value) && input.value !== "" ) {
+        if(input.type === 'email' && !emailValidate(input.value) && input.value !== "" ) {
             document.getElementById('invalid-'+input.name).innerHTML = "Masukan format email yang benar";
             document.getElementById('invalid-'+input.name).style.display = "block";
         }
@@ -57,10 +57,8 @@ const proses = async ()=>{
         arrKomen.forEach((val)=>{
             if(val==""){
                 arrKomen.splice(arrKomen.indexOf(val), 1);
-                console.log(arrKomen);
             }
         });
-        // console.log(arrKomen);
         document.getElementById('res-komen').innerHTML = komen;
         document.getElementById('text-length').innerHTML = arrKomen.length;
         document.getElementById('kata-kasar').innerHTML = hasilKataKasar.toString();
@@ -82,13 +80,15 @@ const proses = async ()=>{
 }
 
 const tutup=()=>{
-    console.log('klik');
     document.getElementById('res-wrapper').style.opacity= 0;
     document.getElementById('res-wrapper').style.zIndex= -1;
     document.getElementsByClassName('overlay')[0].style.opacity =0;
     document.getElementsByClassName('overlay')[0].style.zIndex =-1;
 }
 
-const reset=()=>{
+const ulang=()=>{
     document.getElementById("form").reset();
+    Array.from(inputs).forEach(function(input) {
+        document.getElementById('invalid-'+input.name).style.display = "none";
+    });
 }
