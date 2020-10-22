@@ -3,7 +3,7 @@ const emailValidate = (email)=>{
     return pattern.test(email);
 }
 let inputs = document.getElementsByClassName('form-input');
-
+let error = false;
 const cekKataKasar = async (sumber, KataKasar)=>{
     let len = KataKasar.length;
     let res;
@@ -24,6 +24,7 @@ Array.from(inputs).forEach(function(input) {
         }
         if (input.value !== '') {
             document.getElementById('invalid-'+input.name).style.display = "none";
+            error = false;
         }else{
             document.getElementById('invalid-'+input.name).style.display = "block";
             document.getElementById('invalid-'+input.name).innerHTML = input.name +" ga boleh kosong";
@@ -33,13 +34,13 @@ Array.from(inputs).forEach(function(input) {
         if(input.type === 'email' && !emailValidate(input.value) && input.value !== "" ) {
             document.getElementById('invalid-'+input.name).innerHTML = "Masukan format email yang benar";
             document.getElementById('invalid-'+input.name).style.display = "block";
+            error = true;
         }
     });
 });
 
 const proses = async ()=>{
     let panjangInput = document.getElementsByClassName('form-input').length;
-    let error = false;
     for (let i = 0; i < panjangInput; i++) {
         if(document.getElementsByClassName('form-input')[i].value == ''){
             let id = 'invalid-'+document.getElementsByClassName('form-input')[i].name;
