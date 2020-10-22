@@ -18,6 +18,16 @@ const cekKataKasar = async (sumber, KataKasar)=>{
     return hasilKataKasar;
 }
 Array.from(inputs).forEach(function(input) {
+
+    input.addEventListener('focus', ()=>{
+        input.parentNode.classList.add('active');
+    });
+    input.addEventListener('blur', ()=>{
+        input.parentNode.classList.remove('active');
+        if(input.value.length>0){
+            input.parentNode.classList.add('berisi');
+        }
+    });
     input.addEventListener('keyup', (e)=>{
         if(e.keyCode==13 && input.localName != 'textarea'){
             proses();
@@ -38,18 +48,29 @@ Array.from(inputs).forEach(function(input) {
         }else if(input.type === 'email' && emailValidate(input.value)){
             errorEmail = false;
         }
+        if(input.type == 'select-one' && input.value.length>0){
+            document.getElementById('invalid-'+input.name).style.display = "none";
+        }
     });
 });
 
 const proses = async ()=>{
+    console.log(error);
+    console.log(errorEmail);
     let panjangInput = document.getElementsByClassName('form-input').length;
+    let errorCount = 0;
     for (let i = 0; i < panjangInput; i++) {
         if(document.getElementsByClassName('form-input')[i].value == ''){
             let id = 'invalid-'+document.getElementsByClassName('form-input')[i].name;
             document.getElementById(id).style.display = "block";
             document.getElementById(id).innerHTML = document.getElementsByClassName('form-input')[i].name + " ga boleh kosong";
-            error = true;
-        }      
+            errorCount++;
+        }    
+    }
+    if(errorCount== 0){
+        error = false;
+    }else{
+        error = true;
     }
     if(!error && !errorEmail){
         let major =  document.getElementById('major').value;
@@ -98,4 +119,7 @@ const ulang=()=>{
     Array.from(inputs).forEach(function(input) {
         document.getElementById('invalid-'+input.name).style.display = "none";
     });
+    Array.from(document.getElementsByClassName('form-group')).forEach((input)=>{
+        input.classList.remove('active');
+    })
 }

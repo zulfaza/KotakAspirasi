@@ -25,9 +25,10 @@
             </div>
             <div class="card-body">
                 <form name="form" id="form">
-                    <div class="form-group">
-                        <label for="">Major</label>
+                    <div class="form-group animate">
+                        <label class="labelText">Major</label>
                         <select class="form-input" id="major" name="major">
+                            <option value="" selected disabled></option>
                             <option value="Computer Science">Computer Science</option>
                             <option value="Electronics and Instrumentation">Electronics and Instrumentation</option>
                             <option value="Chemistry">Chemistry</option>
@@ -40,19 +41,19 @@
                         </select>
                         <div class="invalid-feedback" id="invalid-major"></div>
                     </div>
-                    <div class="form-group">
-                        <label for="">Nama</label>
-                        <input class="form-input" type="text" id="name" placeholder="Name" name="name">
+                    <div class="form-group animate">
+                        <label class="labelText">Nama</label>
+                        <input class="form-input" type="text" id="name" name="name">
                         <div class="invalid-feedback" id="invalid-name">jkacskajc akj</div>
                     </div>
-                    <div class="form-group">
-                        <label for="">E-mail</label>
-                        <input class="form-input" type="email" id="email" placeholder="E-mail" name="email">
+                    <div class="form-group animate">
+                        <label class="labelText">E-Mail</label>
+                        <input class="form-input" type="email" id="email" name="email">
                         <div class="invalid-feedback" id="invalid-email"></div>
                     </div>
-                    <div class="form-group">
-                        <label for="">Comments</label>
-                        <textarea class="form-input" id="komen" cols="30" rows="10" name="komen" placeholder="Komentarmu"></textarea>
+                    <div class="form-group animate">
+                        <label class="labelText">Comments</label>
+                        <textarea class="form-input" id="komen" cols="30" rows="10" name="komen"></textarea>
                         <div class="invalid-feedback" id="invalid-komen"></div>
                     </div>
                     <input class="btn btn-primary" type="button" onclick="ulang()" value="Reset">
@@ -71,7 +72,7 @@
                     <a href="https://github.com/zulfaza" target="_blank"></a>
                     <a href="https://dribbble.com/zulfaza" target="_blank"></a>
                 </div>
-                <div class="copyright">
+                <div class="copyright text-trinary">
                     <p>• Copyright © 2020 •</p>
                 </div>
             </div>

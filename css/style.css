@@ -1,6 +1,11 @@
 :root{
-    --primary : #048dc1;
+    --primary : #8f60ff;
+    --primary50 : #bb86FC50;
+    --secondary : #bb86FC;
+    --trinary : #03DAC6;
     --red : #ff3c3c;
+    --dark : #121212;
+    --semidark : #222222;
 }
 
 html {
@@ -25,7 +30,7 @@ body {
     font-weight: 400;
     color: #212529;
     text-align: left;
-    background: #74e3ff url('../img/2.png') bottom right no-repeat;
+    background: var(--dark) url('../img/2.png') bottom right no-repeat;
     overflow-x: hidden;
 }
 .font-weight-bold{
@@ -37,6 +42,9 @@ body {
 .text-white{
     color: white;
 }
+.text-trinary{
+    color: var(--trinary);
+}
 h1{
     font-size: 3rem;
     position: relative;
@@ -45,7 +53,7 @@ h1{
 h1::before{
     content: 'Kotak Aspirasi';
     position: absolute;
-    color: #0000006e;
+    color: var(--primary50);
     z-index: -1;
     left: -6px;
     top: 2px;
@@ -74,23 +82,64 @@ h1::before{
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
+    color: var(--trinary);
+    background-color: #131313;
     background-clip: padding-box;
-    border: 1px solid #ced4da;
+    border: 2px solid #131313;
     border-radius: .25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: all .5s ease-in-out;
     box-sizing: border-box;
 }
-.form-input:focus{
-    color: #495057;
-    background-color: #fff;
-    border-color: #80bdff;
+.form-group::before{
+    content: '';
+    width: 0%;
+    height: 2px;
+    position: absolute;
+    background: var(--primary);
+    transition: width .5s ease-out;
+    bottom: 0;
+}
+.form-group.active::before{
+    width: 100%;
+}
+.labelText{
+    position: absolute;
+    top: 9px;
+    left: 15px;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    pointer-events: none;
+    font-weight: bold;
+}
+.form-group.active .labelText, .form-group.berisi .labelText{
+    top: -30px;
+    left: 10px;
+}
+
+.form-input:focus, input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus{
+    color: var(--trinary);
+    background-color: #131313;
+    -webkit-text-fill-color:var(--trinary);
+    -webkit-box-shadow: 0 0 0px 1000px #131313 inset;
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
 }
 .form-group{
     margin-bottom: 1rem;
+    position: relative; 
+}
+.form-group.animate{
+    margin-top: 40px;
+}
+.form-group.animate:first-child{
+    margin-top: 25px;
 }
 button, input, optgroup, select, textarea {
     margin: 0;
@@ -105,10 +154,12 @@ button, input, optgroup, select, textarea {
 label {
     display: inline-block;
     margin-bottom: .5rem;
+    color: var(--trinary);
 }
 
 .invalid-feedback{
     color: red;
+    font-weight: bold;
 }
 .btn {
     display: inline-block;
@@ -149,8 +200,9 @@ label {
 
 .card-body {
     position: relative;
-    background: white;
+    background: var(--semidark);
     padding: 1rem 1rem 2rem 1rem;
+    color: var(--trinary);
 }
 .card-header {
     background: var(--primary);
@@ -216,6 +268,7 @@ noscript{
     padding: 20px;
     font-size: 1.2rem;
     border-radius: 10px;
+    color: var(--dark);
 }
 .form{
     animation: turunn 0.5s ease-out;
@@ -223,10 +276,11 @@ noscript{
 }
 .namaSaya {
     position: relative;
-    background: white;
+    background: var(--semidark);
     border-radius: 17px;
     padding: 0px 2rem;
     animation: turunn 0.5s ease-out;
+    color: var(--trinary);
 }
 #kataKasar-wrapper{
     font-weight: bold;
@@ -242,7 +296,7 @@ noscript{
 }
 .sosmed a {
     color: #fff;
-    background: #6c21ff38;
+    background: var(--primary50);
     border-radius: 4px;
     text-align: center;
     font-size: 1.4rem;
@@ -251,10 +305,10 @@ noscript{
     font-family: "Font Awesome 5 Brands";
     margin: 0 2px;
     transform: scale(1);
-    -o-transition: all .5s ease-out;
-    -webkit-transition: all .5s ease-out;
-    -moz-transition: all .5s ease-out;
-    transition: all .5s ease-out;
+    -o-transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    transition: all .3s ease-out;
     -webkit-font-smoothing: antialiased;
 }
 .sosmed a:hover{
