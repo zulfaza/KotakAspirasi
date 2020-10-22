@@ -120,6 +120,6 @@ const ulang=()=>{
         document.getElementById('invalid-'+input.name).style.display = "none";
     });
     Array.from(document.getElementsByClassName('form-group')).forEach((input)=>{
-        input.classList.remove('active');
+        input.classList.remove('berisi');
     })
 }
