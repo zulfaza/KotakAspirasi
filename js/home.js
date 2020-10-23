@@ -73,13 +73,13 @@ const proses = async ()=>{
     if(!error && !errorEmail){
         let major =  document.getElementById('major').value;
         let name = document.getElementById('name').value;
-        let komen = document.getElementById('komen').value.replace(/([^a-zA-z0-9`!@#%&"',?-]+|\[|\]|\`|\^)/g,"");
+        let komen = document.getElementById('komen').value.replace(/(~|`|\$|\^|\*|\(|\)|{|}|\[|\]|;|<|>|\/|\\|\||_|\+|=)/g,"");
         let email = document.getElementById('email').value.split('@');
         let username = email[0];
         let domain = email[1];
         const arrKataKasar = ['babi','anjing', 'goblok','berengsek','bajingan','asu','tai','idiot','kontol', 'memek','ngentot','pepek','pantek','monyet', 'balmond','fuck','shit','asshole','penis','pussy','cock','dick'];
         let hasilKataKasar = await cekKataKasar(komen,arrKataKasar);
-        let arrKomen = komen.replace(/\W/g,"").split(/\s+/).filter(item => item);
+        let arrKomen = komen.replace(/(!|@|#|%|&|:|\"|'|,|\.|\?|-|=)/g,"").split(/\s+/).filter(item => item);
         document.getElementById('res-komen').innerHTML = komen;
         document.getElementById('text-length').innerHTML = arrKomen.length;
         document.getElementById('kata-kasar').innerHTML = hasilKataKasar.toString();
